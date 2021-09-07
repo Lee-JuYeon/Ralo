@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.cavss.ralo.vm.MainVM" />
+
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity ="center"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/luxury_blueBackground">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/platform_recyclerview">
+            </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/platform_recyclerview"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/quoto_title"
+                android:text="빛나는 그의 어록들"
+                android:textColor="@color/luxury_blueGold"
+                android:textSize="25sp"
+                android:fontFamily="@font/kotra_bold"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quoto_title"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/quoto_recyclerview"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quoto_recyclerview"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/toprate_title"
+                android:text="화려한 Top Rating"
+                android:textColor="@color/luxury_blueGold"
+                android:textSize="25sp"
+                android:fontFamily="@font/kotra_bold"/>
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toprate_title"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="50dp"
+                android:id="@+id/toprate_viewpager2"/>
+        </RelativeLayout>
+    </ScrollView>
+</layout>

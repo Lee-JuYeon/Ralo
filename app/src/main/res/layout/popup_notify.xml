@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/popup_title"
+            android:text="@{title}"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/kotra_bold"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/background_popuptop">
+        </TextView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/popup_dismiss"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            app:cardBackgroundColor="@color/window_red"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp">
+        </androidx.cardview.widget.CardView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@id/popup_title"
+            android:background="@drawable/background_popupbottom">
+            <com.github.mmin18.widget.RealtimeBlurView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/blur"
+                app:realtimeBlurRadius="20dp"
+                app:realtimeOverlayColor="#80FFFFFF"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:id="@+id/recyclerview"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

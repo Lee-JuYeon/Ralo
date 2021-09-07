@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">랄로촌</string>
+    <string name="image_loading">Loading....</string>
+    <string name="community_edittext">긍정적인 문장, 유연한 사고</string>
+    <string name="ralo_youtube">https://www.youtube.com/channel/UCD2YO_A_PVMgMDN9jpRrpVA</string>
+    <string name="ralo_twitch">https://www.twitch.tv/aba4647</string>
+    <string name="ralo_twgether">https://tgd.kr/s/aba4647</string>
+</resources>

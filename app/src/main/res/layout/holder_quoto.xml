@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="model"
+            type="com.cavss.ralo.model.QuotoModel" />
+        <variable
+            name="iclick"
+            type="com.cavss.ralo.ui.customs.recyclerview.IClickListener" />
+    </data>
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/background_quoto"
+        android:text="@{model.quoto}"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:gravity="center_vertical|center_horizontal"
+        android:fontFamily="@font/eulyoo1945_semibold"
+        android:onClick="@{() -> iclick.onClick(0, model)}"/>
+</layout>

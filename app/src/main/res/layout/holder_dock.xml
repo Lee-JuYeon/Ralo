@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="model"
+            type="com.cavss.ralo.model.DockModel" />
+        <variable
+            name="iclick"
+            type="com.cavss.ralo.ui.customs.recyclerview.IClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:onClick="@{() -> iclick.onClick(0, model)}">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@{model.image}"
+            android:contentDescription="@string/image_loading">
+        </ImageView>
+    </LinearLayout>
+</layout>

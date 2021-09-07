@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!--        <import-->
+        <!--            type="com.cavss.celebrity.ui.customs.recyclerview.holder.BaseViewHolder"/>-->
+        <!--        <import-->
+        <!--            type="android.view.View"/>-->
+        <variable
+            name="model"
+            type="com.cavss.ralo.model.ComplainModel" />
+        <variable
+            name="iclick"
+            type="com.cavss.ralo.ui.customs.recyclerview.IClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_radius"
+        android:backgroundTint="@color/luxury_bluePointDeep"
+        android:onClick="@{() -> iclick.onClick(0, model)}">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_launcher_background"
+            android:contentDescription="@string/image_loading"
+            android:id="@+id/selfie"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@id/selfie"
+            android:paddingStart="10dp"
+            android:text="@{model.user.name}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/kotra_bold"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@id/name"
+            android:layout_toEndOf="@id/selfie"
+            android:paddingStart="10dp"
+            android:text="@{model.timeStamp}"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:gravity="start"
+            android:id="@+id/time"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time"
+            android:maxLines="3"
+            android:text="@{model.complain}"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:fontFamily="@font/noto_normal"
+            android:id="@+id/complain"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/complain"
+            android:text="@{model.answer}"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:fontFamily="@font/noto_bold"/>
+    </RelativeLayout>
+</layout>

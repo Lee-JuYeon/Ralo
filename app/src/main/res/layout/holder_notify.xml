@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="model"
+            type="com.cavss.ralo.model.NotifyModel" />
+        <variable
+            name="iclick"
+            type="com.cavss.ralo.ui.customs.recyclerview.IClickListener" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_radius">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@id/expand"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:id="@+id/title"
+            android:text="@{model.title}"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/noto_bold"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/expand"
+            android:src="@drawable/ic_launcher_background"
+            android:contentDescription="@string/image_loading"
+            android:onClick="@{() -> iclick.onClick(0, model)}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:id="@+id/timeStamp"
+            android:text="@{model.timeStamp}"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeStamp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:id="@+id/description"
+            android:text="@{model.description}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/noto_normal"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+</layout>

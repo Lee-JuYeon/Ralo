@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="model"
+            type="com.cavss.ralo.model.TopbarModel" />
+        <variable
+            name="iclick"
+            type="com.cavss.ralo.ui.customs.recyclerview.IClickListener" />
+    </data>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@{model.itemNative}"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:fontFamily="@font/noto_bold"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:onClick="@{() -> iclick.onClick(0,model)}"/>
+</layout>
